@@ -1,0 +1,41 @@
+name: 部署博客到服务器
+on:
+  push:
+    branches:
+      - main  # 或者 master，看你的主分支名称
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. 检出代码
+      - name: 检出代码
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 获取所有历史，VitePress 需要用于生成最后更新时间
+      # 2. 设置 Node.js
+      - name: 设置 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      # 3. 安装依赖
+      - name: 安装依赖
+        run: npm ci
+      # 4. 构建项目
+      - name: 构建项目
+        run: npm run build
+      # 5. 部署到服务器
+      - name: 部署到服务器
+        uses: easingthemes/ssh-deploy@main
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+          REMOTE_HOST: ${{ secrets.SERVER_HOST }}
+          REMOTE_USER: ${{ secrets.SERVER_USER }}
+          SOURCE: "docs/.vitepress/dist/"
+          TARGET: ${{ secrets.SERVER_PATH }}
+          EXCLUDE: "/node_modules/, /.git/, /.github/"
+      # 6. 通知部署成功（可选）
+      - name: 部署成功
+        run: |
+          echo "🎉 部署成功！"
+          echo "访问地址：https://zzq323.com"
