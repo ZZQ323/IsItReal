@@ -1,8 +1,44 @@
-export default {
+import { defineConfig } from 'vitepress'
+import mathjax3 from 'markdown-it-mathjax3'
+import markdownItMark from 'markdown-it-mark'
+import markdownItIns from 'markdown-it-ins'
+import markdownItSub from 'markdown-it-sub'
+import markdownItSup from 'markdown-it-sup'
+import colorTextPlugin from './plugins/markdown-it-color.js'
+
+
+export default defineConfig({
     // 网站标题
-    title: '我的技术博客',
+    title: 'zzq323 的技术博客',
+    markdown: {
+        config: (md) => {
+            md.use(mathjax3)
+            md.use(markdownItMark)  // ==高亮==
+            md.use(markdownItIns)   // ++下划线++
+            md.use(markdownItSub)   // ~下标~
+            md.use(markdownItSup)   // ^上标^
+            md.use(colorTextPlugin)
+        }
+    },
+    // 引入 KaTeX 样式
+    head: [
+        [
+            'script',
+            {
+                src: 'https://polyfill.io/v3/polyfill.min.js?features=es6'
+            }
+        ],
+        [
+            'script',
+            {
+                id: 'MathJax-script',
+                async: true,
+                src: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+            }
+        ]
+    ],
     // 网站描述
-    description: '算法、前端、后端、数据库技术分享',
+    description: '算法、前端、后端、数据库技术笔记',
     // 主题配置
     themeConfig: {
         // 顶部导航栏（大分类）
@@ -11,7 +47,10 @@ export default {
             { text: '算法', link: '/algorithm/', activeMatch: '/algorithm/' },
             { text: '前端', link: '/frontend/' },
             { text: '后端', link: '/backend/' },
-            { text: '数据库', link: '/database/' }
+            { text: '数据库', link: '/database/' },
+            { text: '使用工具', link: '/tools/' },
+            { text: '测试', link: '/test/' },
+            { text: '运维', link: '/operations/' },
         ],
         // 侧边栏配置（多层分类）
         sidebar: {
@@ -103,7 +142,7 @@ export default {
                         { text: 'Flex 布局', link: '/frontend/css/flex' }
                     ]
                 },
-                
+
             ],
 
             // 后端栏目的侧边栏
@@ -157,9 +196,43 @@ export default {
                         { text: 'Redis 基础', link: '/database/redis/basic' }
                     ]
                 }
-            ]
+            ],
+            '/tools/': [
+                {
+                    text: '其他工具',
+                    collapsed: false,
+                    items: [
+                        { text: "latex", link: '/tools/latex' },
+                    ]
+                },
+            ],
+            '/test/': [
+                {
+                    text: '测试知识',
+                    collapsed: false,
+                    items: [
+                        { text: "docker", link: '/operations/docker' },
+                        { text: "K8S", link: '/operations/K8S' },
+                        { text: "Nacos", link: '/operations/nacos' },
+                        { text: "Ngnix", link: '/operations/ngnix' },
+                        { text: "云效流水线配置", link: '/operations/pipeline' },
+                    ]
+                },
+            ],
+            '/operations/': [
+                {
+                    text: '运维知识',
+                    collapsed: false,
+                    items: [
+                        { text: "docker", link: '/operations/docker' },
+                        { text: "K8S", link: '/operations/K8S' },
+                        { text: "Nacos", link: '/operations/nacos' },
+                        { text: "Ngnix", link: '/operations/ngnix' },
+                        { text: "云效流水线配置", link: '/operations/pipeline' },
+                    ]
+                },
+            ],
         },
-
         // 社交链接（可选）
         socialLinks: [
             { icon: 'github', link: 'https://github.com/ZZQ323' }
@@ -176,4 +249,4 @@ export default {
             provider: 'local'
         }
     }
-}
+})

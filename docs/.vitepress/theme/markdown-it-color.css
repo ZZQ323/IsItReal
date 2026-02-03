@@ -1,0 +1,103 @@
+/* 彩色文字样式 */
+.color-red {
+    color: #ef4444;
+    font-weight: 600;
+}
+
+.color-blue {
+    color: #3b82f6;
+    font-weight: 600;
+}
+
+.color-lightblue {
+    color: lightblue;
+    font-weight: 600;
+}
+
+.color-lightgoldenrodyellow {
+    color: lightgoldenrodyellow;
+    font-weight: 600;
+}
+
+.color-lightsalmon {
+    color: lightsalmon;
+    font-weight: 600;
+}
+
+.color-lightskyblue {
+    color: lightskyblue;
+    font-weight: 600;
+}
+
+.color-lightyellow {
+    color: lightyellow;
+    font-weight: 600;
+}
+
+.color-green {
+    color: #22c55e;
+    font-weight: 600;
+}
+
+.color-yellow {
+    color: #eab308;
+    font-weight: 600;
+}
+
+.color-orange {
+    color: #f97316;
+    font-weight: 600;
+}
+
+.color-purple {
+    color: #a855f7;
+    font-weight: 600;
+}
+
+.color-pink {
+    color: #ec4899;
+    font-weight: 600;
+}
+
+.color-gray {
+    color: #6b7280;
+    font-weight: 600;
+}
+
+.color-cyan {
+    color: #06b6d4;
+    font-weight: 600;
+}
+
+/* 带背景的彩色文字 */
+.color-red-bg {
+    color: #dc2626;
+    background-color: #fee2e2;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.color-blue-bg {
+    color: #2563eb;
+    background-color: #dbeafe;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.color-green-bg {
+    color: #16a34a;
+    background-color: #dcfce7;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.color-yellow-bg {
+    color: #ca8a04;
+    background-color: #fef9c3;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+}

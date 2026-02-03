@@ -1,11 +1,9 @@
 ---
 layout: home
 
-
-
 hero:
   name: zzq的笔记本
-  text: 记录技术成长的每一步
+  text: 水滴石穿
   tagline: 算法 · 前端 · 后端 · 数据库
   actions:
     - theme: brand

@@ -1,6 +1,7 @@
 {
   "name": "isitreal",
   "version": "1.0.0",
+  "type": "commonjs",
   "description": "blogs ",
   "homepage": "https://github.com/ZZQ323/IsItReal#readme",
   "bugs": {
@@ -12,7 +13,6 @@
   },
   "license": "ISC",
   "author": "zzq323",
-  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "dev": "vitepress dev docs",
@@ -22,5 +22,12 @@
   },
   "devDependencies": {
     "vitepress": "^1.6.4"
+  },
+  "dependencies": {
+    "markdown-it-ins": "^4.0.0",
+    "markdown-it-mark": "^4.0.0",
+    "markdown-it-mathjax3": "^4.3.2",
+    "markdown-it-sub": "^2.0.0",
+    "markdown-it-sup": "^2.0.0"
   }
 }

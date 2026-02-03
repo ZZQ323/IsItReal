@@ -1,0 +1,26 @@
+/* 黄色高亮 */
+mark {
+    background-color: #fef08a;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+/* 绿色下划线 */
+ins {
+    background-color: #d1fae5;
+    text-decoration: none;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+/* 红色文字 */
+.text-red {
+    color: #ef4444;
+    font-weight: 600;
+}
+
+/* 蓝色文字 */
+.text-blue {
+    color: #3b82f6;
+    font-weight: 600;
+}
