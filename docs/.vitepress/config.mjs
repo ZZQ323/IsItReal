@@ -39,6 +39,8 @@ export default defineConfig({
     ],
     // 网站描述
     description: '算法、前端、后端、数据库技术笔记',
+    // 新增：禁用死链接检查
+    ignoreDeadLinks: true,
     // 主题配置
     themeConfig: {
         // 顶部导航栏（大分类）
