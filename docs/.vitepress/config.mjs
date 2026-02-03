@@ -10,6 +10,7 @@ import colorTextPlugin from './plugins/markdown-it-color.js'
 export default defineConfig({
     // 网站标题
     title: 'zzq323 的技术博客',
+    base: '/blog/',
     markdown: {
         config: (md) => {
             md.use(mathjax3)
