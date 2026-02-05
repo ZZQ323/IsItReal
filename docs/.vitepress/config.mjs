@@ -60,6 +60,13 @@ export default defineConfig({
             // 算法栏目的侧边栏
             '/algorithm/': [
                 {
+                    text: '首页',
+                    collapsed: false,  // 默认展开
+                    items: [
+                        { text: '简介', link: '/algorithm/index' },
+                    ]
+                },
+                {
                     text: '数据结构',
                     collapsed: false,  // 默认展开
                     items: [
@@ -73,10 +80,12 @@ export default defineConfig({
                     collapsed: false,  // 默认展开
                     items: [
                         { text: '基础线性dp', link: '/algorithm/dynamic-programming/linear' },
+                        { text: '背包问题', link: '/algorithm/dynamic-programming/bag' },
                         { text: '区间dp', link: '/algorithm/dynamic-programming/interval' },
                         { text: '树形dp', link: '/algorithm/dynamic-programming/tree' },
                         { text: '数位dp', link: '/algorithm/dynamic-programming/digital' },
                         { text: '状压dp', link: '/algorithm/dynamic-programming/state' },
+                        { text: '题单', link: '/algorithm/dynamic-programming/collection' },
                     ]
                 },
                 {
